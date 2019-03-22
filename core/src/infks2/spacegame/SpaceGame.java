@@ -5,19 +5,19 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import infks2.spacegame.SpaceShip.Blocks;
+import infks2.spacegame.SpaceShip.Block;
 
 public class SpaceGame extends ApplicationAdapter {
 
 	SpriteBatch batch;
 	Texture img;
-	Blocks block;
+	Block block;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("image/IMG_0021.PNG");
-		block = new Blocks();
+		block = new Block();
 	}
 
 	@Override
