@@ -3,12 +3,14 @@ package infks2.spacegame.SpaceShip;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
+import infks2.spacegame.SpaceGame;
 
 public class Blocks {
 
     public Texture texture;
     public int XCoor = 0;
     public int YCoor = 0;
+
 
     public Blocks() {
         this.texture = new Texture("image/Block.png");
@@ -32,5 +34,4 @@ public class Blocks {
             YCoor = YCoor - 5;
         }
     }
-
 }
