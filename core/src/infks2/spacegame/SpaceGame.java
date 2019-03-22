@@ -23,10 +23,7 @@ public class SpaceGame extends ApplicationAdapter {
 		batch.begin();
 		batch.draw(img, 0, 0);
 		batch.end();
-		//test push
-        //für lars
-		//für larsiii
-		//kannst du das sehen
+		//ja brudiiiii
 	}
 	
 	@Override
