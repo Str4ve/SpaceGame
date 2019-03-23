@@ -39,16 +39,15 @@ public class SpaceGame extends ApplicationAdapter {
 		batch.draw(block.texture, block.XCoor, block.YCoor);
 		for(int i = 0; i < BlockSpawn.size(); i++) {
 			batch.draw(block.texture, BlockSpawn.get(i).XCoorDrag, BlockSpawn.get(i).YCoorDrag);
-		}
-		for(int i = 0; i < BlockSpawn.size(); i++) {
-			BlockSpawn.get(i).Moving();
+			CheckBlock(BlockSpawn.get(i));
+			BlockSpawn.get(i).XCoorMouse = Gdx.input.getX();
+			BlockSpawn.get(i).YCoorMouse = GetMouseY();
 		}
 		batch.end();
 		block.Moving();
 		block.DragDrop();
 		Spawn();
-
-		/*int Findx = Gdx.input.getX();
+		/*int Findx = Gdx.input.getY();
 		System.out.println(Findx);*/
 	}
 
@@ -62,6 +61,19 @@ public class SpaceGame extends ApplicationAdapter {
 		if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
 			BlockSpawn.add(new Blocks());
 		}
+	}
+
+	public void CheckBlock(Blocks blok) {
+		int a = blok.XCoorMouse;
+		int b = blok.YCoorMouse;
+		double c = Math.sqrt(Math.pow(blok.XCoorDrag - a, 2) + Math.pow(blok.YCoorDrag - b, 2));;
+		if(c <= 10) {
+			blok.DragDrop();
+		}
+	}
+
+	public int GetMouseY() {
+		return 480 - Gdx.input.getY();
 	}
 
 }

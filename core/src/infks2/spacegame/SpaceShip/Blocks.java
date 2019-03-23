@@ -10,6 +10,10 @@ public class Blocks {
     public Texture texture;
     public int XCoor = 0;
     public int YCoor = 0;
+    public int XCoorDrag = 500;
+    public int YCoorDrag = 410;
+    public int XCoorMouse = Gdx.input.getX();
+    public int YCoorMouse = Gdx.input.getY();
 
 
     public Blocks() {
@@ -32,6 +36,14 @@ public class Blocks {
         }
         if(Backwards == true) {
             YCoor = YCoor - 5;
+        }
+    }
+
+    public void DragDrop() {
+        boolean LeftPressed = Gdx.input.isButtonPressed(Input.Buttons.LEFT);
+        if(LeftPressed == true) {
+            XCoorDrag = XCoorMouse;
+            YCoorDrag = YCoorMouse;
         }
     }
 }
